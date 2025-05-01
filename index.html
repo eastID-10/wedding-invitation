@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ephesis&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- confetti animation -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </head>
+  <body
+    id="main-body"
+    class="bg-[url('/assets/bg.png')] overflow-hidden object-contain font-['Spectral'] text-indigo-700"
+  >
+    <!-- Nav -->
+    <header
+      id="navbar"
+      class="hidden fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50"
+    >
+      <nav
+        class="flex items-center justify-center space-x-10 bg-white rounded-full px-8 py-3"
+      >
+        <a
+          href="#home"
+          class="fas fa-home text-indigo-500 hover:text-indigo-800 active:text-indigo-800"
+        ></a>
+        <a
+          href="#greetings"
+          class="fa-solid fa-restroom text-indigo-500 hover:text-indigo-800 active:text-indigo-800"
+        ></a>
+        <a
+          href="#dates"
+          class="fa-solid fa-clock text-indigo-500 hover:text-indigo-800 active:text-indigo-800"
+        ></a>
+        <a
+          href="#gift"
+          class="fa-solid fa-gift text-indigo-500 hover:text-indigo-800 active:text-indigo-800"
+        ></a>
+        <a
+          href="#rsvp"
+          class="fa-solid fa-comment text-indigo-500 hover:text-indigo-800 active:text-indigo-800"
+        ></a>
+      </nav>
+    </header>
+    <!-- home section -->
+    <section
+      id="home"
+      class="min-h-screen grid place-items-center mx-auto w-full lg:w-1/2"
+    >
+    <!-- music -->
+    <audio id="bgAudio" autoplay loop>
+      <source src="assets/music/sound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+     <!-- svg -->
+      <div class="absolute inset-0 min-h-screen">
+        <div class="fixed top-0 left-0 w-1/6">
+          <img src="assets/top-left.svg" alt="" />
+        </div>
+        <div class="fixed top-0 right-0 w-1/6">
+          <img src="assets/top-right.svg" alt="" />
+        </div>
+        <div class="fixed bottom-0 right-0 w-1/6">
+          <img src="assets/bt-right.svg" alt="" />
+        </div>
+        <div class="fixed bottom-0 left-0 w-1/6">
+          <img src="assets/bt-left.svg" alt="" />
+        </div>
+      </div>
+      <div
+        id="overlay"
+        class="fixed z-50 inset-0 min-h-screen  bg-indigo-100 bg-cover bg-center flex flex-col items-center justify-center z-50"
+      >
+      
+        <div class="bg-indigo-50 rounded-full">
+          <dotlottie-player
+            src="https://lottie.host/91ceba2e-d185-4617-a618-032d922e90d7/3K8roQGRBp.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 200px; height: 200px"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+        <div class="font-['Ephesis'] text-indigo-900 text-3xl mb-4 text-center">
+          <h1 class="font-medium ">Hike Masroah</h1>
+          <div class="flex items-center justify-center">
+            <span class="w-1/6 h-[2px] bg-indigo-900"></span>
+            <span class="px-2   text-xl">&</span>
+            <span class="w-1/6 h-[2px] bg-indigo-900"></span>
+          </div>
+          <h1 class="font-medium  ">Handiyono</h1>
+        </div>
+        <button
+         onclick="stopConfettiAndOpen()"
+          class="rounded-full ring-2 ring-indigo-300 border border-indigo-400 bg-indigo-500 hover:bg-indigo-800 px-8 py-2 text-white font-sans shadow-lg"
+        >
+          Buka Undangan
+        </button>
+      </div>
+      <!-- couple names -->
+      <div
+        class="grid place-items-center mx-auto w-full text-center font-['Ephesis']"
+      >
+        <div class="py-5">
+          <h5 class="font-normal font-sans text-xl mx-auto pb-5">
+            The Wedding Of
+          </h5>
+          <h1 class="font-medium text-6xl">Hike Masroah</h1>
+          <div class="flex items-center justify-center my-2">
+            <span class="w-1/6 h-[2px] bg-slate-700"></span>
+            <span class="px-2 text-slate-700 text-3xl">&</span>
+            <span class="w-1/6 h-[2px] bg-slate-700"></span>
+          </div>
+          <h1 class="font-medium text-6xl">Handiyono</h1>
+        </div>
+        <!--  -->
+        <div class="py-5 font-sans">
+          <p class="font-['Ephesis'] text-2xl">Kepada Yth:</p>
+          <p class="text-sm">Bapak/Ibu/Saudara/I</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- greetings -->
+    <section
+      id="greetings"
+      data-aos="fade-right"
+      data-aos-duration="4000"
+      class="min-h-screen grid place-items-center mx-auto w-full lg:w-1/2"
+    >
+      <div class="text-center mx-auto">
+        <h1
+          class="text-5xl font-['Ephesis'] font-medium"
+          data-aos="fade-right"
+          data-aos-duration="5000"
+        >
+          Assalamualaikum
+          <span
+            class="block text-2xl"
+            data-aos="fade-right"
+            data-aos-duration="6000"
+          >
+            Warahmatullahi Wabarakatuh</span
+          >
+        </h1>
+        <h1 class="my-10" data-aos="fade-right" data-aos-duration="7000">
+          Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan
+          menghadiri acara pernikahan kami:
+        </h1>
+        <div
+          class="grid place-items-center"
+          data-aos="fade-right"
+          data-aos-duration="7000"
+        >
+          <img
+            src="assets/couple.png"
+            class="rounded-full w-1/2 lg:w-1/5"
+            alt=""
+          />
+        </div>
+        <p data-aos="fade-right" data-aos-duration="7000">Mempelai:</p>
+        <h1
+          class="font-['Ephesis'] text-3xl"
+          data-aos="fade-right"
+          data-aos-duration="8000"
+        >
+          Hike Masroah
+        </h1>
+        <p data-aos="fade-right" data-aos-duration="8000">
+          Putri dari Bapak Sudiharjo & Ibu Darsiwen
+        </p>
+        <span class="w-[20px] h-[2px] bg-indigo-100"></span>
+        <h1
+          data-aos="fade-right"
+          data-aos-duration="10000"
+          class="font-['Ephesis'] text-3xl"
+        >
+          Handiyono
+        </h1>
+        <p data-aos="fade-right" data-aos-duration="10000">
+          Putra dari Bapak Wasdana & Ibu Surnitem
+        </p>
+      </div>
+    </section>
+
+    <!-- date section-->
+    <section
+      id="dates"
+      data-aos="fade-right"
+      data-aos-duration="12000"
+      class="min-h-screen mx-auto grid place-items-center w-full lg:w-1/2"
+    >
+      <div class="mx-auto text-center grid place-items-center">
+        <h1
+          class="font-['Ephesis'] text-5xl mb-10"
+          data-aos="fade-right"
+          data-aos-duration="14000"
+        >
+          Moment Bahagia
+        </h1>
+        <p data-aos="fade-right" data-aos-duration="16000">
+          Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, insyaAllah
+          kami akan menyelenggarakan acara:
+        </p>
+        <h1
+          class="font-['Ephesis'] mt-5 font-medium text-4xl"
+          data-aos="fade-right"
+          data-aos-duration="17000"
+        >
+          Akad
+        </h1>
+        <p class="text-2xl" data-aos="fade-right" data-aos-duration="18000">
+          Jum'at, 13 Juni 2025
+        </p>
+        <p class="mb-10" data-aos="fade-right" data-aos-duration="18000">
+          Pukul 14.00 WIB - Selesai
+        </p>
+
+        <div
+          class="mx-5 my-2 grid grid-cols-4 gap-4 rounded-full bg-white p-2 shadow-lg outline outline-black/5 text-indigo-800"
+          data-aos="fade-right"
+          data-aos-duration="19000"
+        >
+          <!-- Each item will take equal column space -->
+          <div class="text-center">
+            <div class="text-2xl font-medium" id="days">00</div>
+            <div class="text-xl font-medium opacity-80 font-['Ephesis']">
+              Hari
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-medium" id="hours">00</div>
+            <div class="text-xl font-medium opacity-80 font-['Ephesis']">
+              Jam
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-medium" id="minutes">00</div>
+            <div class="text-xl font-medium opacity-80 font-['Ephesis']">
+              Menit
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-medium" id="seconds">00</div>
+            <div class="text-xl font-medium opacity-80 font-['Ephesis']">
+              Detik
+            </div>
+          </div>
+        </div>
+        <div class="mt-12" data-aos="fade-right" data-aos-duration="20000">
+          <div id="message" class="mb-5">
+            <h1 class="font-['Ephesis'] text-3xl">Lokasi Hajat:</h1>
+            <p>
+              RT 24 RW 05, Desa Larangan, Kec. Lohbener, Kab. Indramayu, Jawa
+              Barat 45252.
+            </p>
+          </div>
+          <a href="https://maps.app.goo.gl/CP2mxSMc85GqdeCe9" target="_blank">
+            <button
+              class="rounded-full font-medium bg-indigo-500 px-12 py-2 hover:bg-indigo-800 text-white"
+            >
+              Lihat Google Maps
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Love & gift Section -->
+    <section
+      id="gift"
+      data-aos="fade-right"
+      data-aos-duration="21000"
+      class="min-h-screen mx-auto w-full lg:w-1/2 grid place-content-center"
+    >
+      <div class="mx-auto text-center mb-12">
+        <h1
+          class="font-['Ephesis'] mb-5 text-5xl"
+          data-aos="fade-right"
+          data-aos-duration="22000"
+        >
+          Love Gift
+        </h1>
+        <p data-aos="fade-right" data-aos-duration="24000">
+          Dengan hormat, bagi Anda yang ingin memberikan tanda kasih kepada
+          kami, dapat melalui:
+        </p>
+      </div>
+      <div
+        class="rounded-xl bg-slate-50 mx-5 p-4 border border-slate-100 shadow"
+        data-aos="fade-right"
+        data-aos-duration="25000"
+      >
+        <p class="text-xl">Transfer</p>
+        <span class="block w-full h-[2px] bg-slate-200 rounded-full"></span>
+        <div class="flex justify-between items-center">
+          <p>Hike Masroah</p>
+          <img src="assets/BRI.svg" class="w-1/4 p-2" alt="" />
+        </div>
+        <div class="flex gap-4 items-center">
+          <button
+            id="copyText"
+            class="bg-indigo-600 fa-solid fa-copy hover:bg-indigo-800 text-white px-2 py-2 rounded-xl"
+          ></button>
+          <p class="font-medium text-sm">0165 0106 8291 508</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section
+      id="rsvp"
+      data-aos="fade-right"
+      data-aos-duration="28000"
+      class="min-h-screen mx-auto w-full lg:w-1/2 grid place-content-center"
+    >
+      <div
+        class="mx-auto mb-12 bg-white rounded-xl px-4 shadow"
+        data-aos="fade-right"
+        data-aos-duration="30000"
+      >
+        <h1 class="text-5xl text-center font-['Ephesis']">Ucapan & Doa</h1>
+        <p class="text-center">Berikan ucapan dan doa melalui whatsapp🤗</p>
+        <form
+          action=""
+          class="mx-5 mt-5"
+          id="waForm"
+          onsubmit="sendToWhatsApp(event)"
+        >
+          <div class="mb-5">
+            <label for="name">Nama</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nama anda..."
+              class="w-full rounded-xl bg-white px-4 py-2 outline outline-indigo-200"
+            />
+          </div>
+          <div class="mb-5">
+            <label for="attendance">Kehadiran</label>
+            <select
+              id="attendance"
+              name="attendance"
+              class="w-full rounded-xl bg-white px-4 py-2 border-indigo-200 shadow"
+            >
+              <option value="0" selected>Konfirmasi Kehadiran</option>
+              <option value="1">✔️Datang</option>
+              <option value="2">❌Berhalangan</option>
+            </select>
+          </div>
+          <div class="mb-5">
+            <label for="message">Ucapan & Doa</label>
+            <textarea
+              name="message"
+              id="message"
+              class="w-full rounded-xl bg-white px-4 py-2 outline outline-indigo-200 h-24"
+            ></textarea>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full rounded-full bg-indigo-400 px-4 py-2 text-white hover:bg-indigo-800"
+            >
+              Kirim
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- script -->
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/copyText.js"></script>
+    <script src="assets/js/form.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/music.js">
+      function playMusic() {
+        const audio = document.getElementById("bgAudio");
+        audio.play();
+      }
+    </script>
+    <!-- JS (before </body>) -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </body>
+</html>
