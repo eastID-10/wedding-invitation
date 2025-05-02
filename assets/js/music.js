@@ -12,4 +12,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Autoplay was prevented:", e);
       });
     });
-  });
+  }); 
