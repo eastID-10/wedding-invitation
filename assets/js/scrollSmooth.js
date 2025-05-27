@@ -8,4 +8,4 @@ const lenis = new Lenis({
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-  
+ 
