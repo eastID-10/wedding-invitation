@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (isMuted) {
       // Muted state
       toggleBtn.classList.remove("bg-indigo-500");
-      toggleBtn.classList.add("bg-indigo-700", "hover:bg-indigo-300");
+      toggleBtn.classList.add("bg-indigo-700", "hover:bg-indigo-700");
       audioIcon.className = "fas fa-volume-xmark text-lg";
     } else {
       // Playing and unmuted state
